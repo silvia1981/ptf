@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.sg.manager.interfaces.ProductManager;
+import com.sg.model.Offer;
 import com.sg.model.Product;
 import com.sg.model.exceptions.ProductNotFoundException;
 
@@ -49,6 +50,7 @@ public class ProductManagerMocked implements ProductManager {
 		}
 	};
 
+	
 	@Override
 	public Product getProduct(final String name, final boolean partialMatch) {
 		LOGGER.debug(

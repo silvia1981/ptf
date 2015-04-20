@@ -9,7 +9,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
  * @author sgomez
  *
  */
-public class Product implements Comparable<Product>{
+public class Product implements Comparable<Billable>, Billable{
 
 	private String name;
 	private int code;
@@ -48,7 +48,8 @@ public class Product implements Comparable<Product>{
 		return name;
 	}
 	@Override
-	public int compareTo(Product paramT) {
+	public int compareTo(Billable paramT) {
 		return this.getName().compareTo(paramT.getName());
 	}
+
 }

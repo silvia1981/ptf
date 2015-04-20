@@ -38,21 +38,25 @@ public class Bill {
 		public void add(float value){
 			cents+= value*100;
 		}
+		public void substract(float value){
+			cents-= value*100;
+		}
+
 		
 		public String getValueAsString(){
 			return toString();
 		}
 	}
 	
-	private Map<Product, Integer> products;
+	private Map<Billable, Integer> products;
 	private AmountOfMoney total;
 	
 	public Bill() {
-		products = new TreeMap<Product, Integer>();
+		products = new TreeMap<Billable, Integer>();
 		total = new AmountOfMoney();
 	}
 	
-	public synchronized void  addProduct(Product p){
+	public synchronized void  addBillable(Billable p){
 		int amountOfProducts = 1;
 		if(products.containsKey(p)){
 			amountOfProducts += products.get(p);
@@ -65,7 +69,7 @@ public class Bill {
 		return total;
 	}
 
-	public Map<Product, Integer> getProducts() {
+	public Map<Billable, Integer> getProducts() {
 		return products;
 	}
 	
